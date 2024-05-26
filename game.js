@@ -93,6 +93,28 @@ function update() {
     frameCount++;
 }
 
+// Képek helyes elhelyezése
+function positions() {
+    // Háttér
+    ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
+
+    // Madár
+    ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+
+    // Akadályok
+    pipes.forEach(pipe => {
+        // Felső akadály
+        ctx.drawImage(topPipeImage, pipe.x, 0, pipe.width, pipe.topY);
+        // Alsó akadály
+        ctx.drawImage(bottomPipeImage, pipe.x, pipe.bottomY, pipe.width, canvas.height - pipe.bottomY);
+    });
+
+    // Pontszám
+    ctx.fillStyle = "#000";
+    ctx.font = "24px Arial";
+    ctx.fillText("Score: " + score, 10, 20);
+}
+
 // Játék fő ciklusa
 function gameLoop() {
     update();
