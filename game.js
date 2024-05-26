@@ -41,6 +41,58 @@ document.addEventListener('mousedown', () => {
     bird.speed = bird.lift;
 });
 
+function update() {
+    // Madár mozgása
+    bird.speed += bird.gravity;
+    bird.y += bird.speed;
+
+    if (bird.y + bird.height > canvas.height || bird.y < 0) {
+        resetGame();
+    }
+
+    // Akadályok frissítése
+    if (frameCount % 180 === 0) {
+        let pipeWidth = 80;
+        let pipeHeight = 100;
+    
+        // Arányosan változtatjuk az akadály magasságát a szélességhez
+        let pipeSize = pipeHeight / pipeWidth;
+        
+        let topHeight = Math.floor(Math.random() * (canvas.height - gap - pipeHeight))+50; // Véletlenszerű magasság a felső akadálynak
+        let bottomHeight = canvas.height - topHeight - gap;
+    
+        pipes.push({
+            x: canvas.width,
+            topY: topHeight,
+            bottomY: topHeight + gap,
+            width: pipeWidth,
+            height: pipeWidth * pipeSize // Arányosan változik a csövek magassága
+        });
+    }
+
+    pipes.forEach((pipe, index) => {
+        pipe.x -= 2;
+        if (pipe.x + pipe.width < 0) {
+            pipes.splice(index, 1);
+            score++;
+        }
+
+        // Ütközés vizsgálata
+        if (
+            bird.x < pipe.x + pipe.width &&
+            bird.x + bird.width > pipe.x &&
+            (
+                bird.y < pipe.topY || // Ütközés a felső csővel
+                bird.y + bird.height > pipe.bottomY // Ütközés az alsó csővel
+            )
+        ) {
+            resetGame();
+        }
+    });
+
+    frameCount++;
+}
+
 // Játék fő ciklusa
 function gameLoop() {
     update();
