@@ -1,3 +1,15 @@
-body{
-    background-image: url(background.webp) ;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #19a5b8;
+    overflow: hidden;
+}
+canvas {
+    background: url('background.webp') repeat-x;
+    display: block;
+    margin: auto;
+    border: 1px solid #000;
 }
