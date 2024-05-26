@@ -115,6 +115,16 @@ function positions() {
     ctx.fillText("Score: " + score, 10, 20);
 }
 
+// Játék újraindítása
+function resetGame() {
+    bird.y = 150;
+    bird.speed = 0;
+    pipes = [];
+    score = 0;
+    frameCount = 0;
+}
+
+
 // Játék fő ciklusa
 function gameLoop() {
     update();
