@@ -53,6 +53,16 @@ public void TestBirdFallsWithoutButtonPress()
     Assert.Greater(newY, initialY);
 }
 
+        [Test]
+public void TestBirdDiesOnCollision()
+{
+    // Move bird to a collision position
+    _js.ExecuteScript("bird.y = 700; update();");
+    Thread.Sleep(100);
+    var birdYAfterCollision = (long)_js.ExecuteScript("return bird.y;");
+    Assert.AreEqual(150, birdYAfterCollision);  // Bird reset position
+}
+
 
         [TearDown]
         public void Teardown()
