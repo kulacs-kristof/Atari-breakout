@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0NJFT2KulVSwVVcS/uaunNE3YUJncBevgPy9exSccmf/fAGQlCftkcHNkbgJNdZpohoAGQru24cYnX/IJx/2rQ==",
+  "dgSpecHash": "M3nEEEzhxdbfSL7lfjvQ6m0qKfzepvKtQ678dPTtM/Y/NtWLzOlFxa3HUF8txVi6vlHnG2grKZ5YGKEKKXb7lA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kulac\\Desktop\\Flappy-Bird\\FlappyBirdTest\\FlappyBirdTest.csproj",
   "expectedPackageFiles": [
@@ -10,13 +10,18 @@
     "C:\\Users\\kulac\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.10.0\\microsoft.testplatform.objectmodel.17.10.0.nupkg.sha512",
     "C:\\Users\\kulac\\.nuget\\packages\\microsoft.testplatform.testhost\\17.10.0\\microsoft.testplatform.testhost.17.10.0.nupkg.sha512",
     "C:\\Users\\kulac\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\kulac\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
-    "C:\\Users\\kulac\\.nuget\\packages\\nunit.analyzers\\4.2.0\\nunit.analyzers.4.2.0.nupkg.sha512",
-    "C:\\Users\\kulac\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
     "C:\\Users\\kulac\\.nuget\\packages\\selenium.support\\4.21.0\\selenium.support.4.21.0.nupkg.sha512",
     "C:\\Users\\kulac\\.nuget\\packages\\selenium.webdriver\\4.21.0\\selenium.webdriver.4.21.0.nupkg.sha512",
     "C:\\Users\\kulac\\.nuget\\packages\\selenium.webdriver.chromedriver\\125.0.6422.14100\\selenium.webdriver.chromedriver.125.0.6422.14100.nupkg.sha512",
-    "C:\\Users\\kulac\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Users\\kulac\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit\\2.8.1\\xunit.2.8.1.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.analyzers\\1.14.0\\xunit.analyzers.1.14.0.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.assert\\2.8.1\\xunit.assert.2.8.1.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.core\\2.8.1\\xunit.core.2.8.1.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.extensibility.core\\2.8.1\\xunit.extensibility.core.2.8.1.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.extensibility.execution\\2.8.1\\xunit.extensibility.execution.2.8.1.nupkg.sha512",
+    "C:\\Users\\kulac\\.nuget\\packages\\xunit.runner.visualstudio\\2.8.1\\xunit.runner.visualstudio.2.8.1.nupkg.sha512"
   ],
   "logs": []
 }
