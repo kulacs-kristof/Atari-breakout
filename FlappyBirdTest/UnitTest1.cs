@@ -98,7 +98,14 @@ public void TestCounterCountsPoints()
     Assert.Greater(newScore, initialScore);
 }
 
-
+        [Test]
+public void TestObstaclesAppearCorrectly()
+{
+    var pipesCountBefore = (long)_js.ExecuteScript("return pipes.length;");
+    Thread.Sleep(2000);  // Wait for pipes to be generated
+    var pipesCountAfter = (long)_js.ExecuteScript("return pipes.length;");
+    Assert.Greater(pipesCountAfter, pipesCountBefore);
+}
 
         [TearDown]
         public void Teardown()
