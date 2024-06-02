@@ -73,6 +73,12 @@ public void TestGameOverTextAppears()
     Assert.IsNotNull(gameOverText);
 }
 
+        [Test]
+public void TestBirdAppearsAtStart()
+{
+    var initialY = (long)_js.ExecuteScript("return bird.y;");
+    Assert.AreEqual(150, initialY);
+}
 
 
         [TearDown]
