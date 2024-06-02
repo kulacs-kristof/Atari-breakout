@@ -11,7 +11,7 @@ namespace FlappyBirdTests
         public FlappyBirdTests()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("../../game.html");
+            driver.Navigate().GoToUrl("C:\\Users\\kulac\\Desktop\\Flappy-Bird\\game.html");
         }
 
         public void Dispose()
@@ -45,7 +45,7 @@ namespace FlappyBirdTests
         {
             var initialBirdYPosition = driver.ExecuteScript("return bird.y;");
             driver.FindElement(By.TagName("body")).SendKeys(Keys.Space);
-            System.Threading.Thread.Sleep(100); // wait for a short duration to see the effect
+            System.Threading.Thread.Sleep(100); // várakozik hogy megnézze történik e valami
             var newBirdYPosition = driver.ExecuteScript("return bird.y;");
             Assert.NotEqual(initialBirdYPosition, newBirdYPosition);
         }
@@ -54,7 +54,7 @@ namespace FlappyBirdTests
         public void PipesAppearAndMove()
         {
             var initialPipeCount = driver.ExecuteScript("return pipes.length;");
-            System.Threading.Thread.Sleep(2000); // wait for pipes to generate
+            System.Threading.Thread.Sleep(2000); // csövek generálására vár
             var newPipeCount = driver.ExecuteScript("return pipes.length;");
             Assert.Equal(initialPipeCount, newPipeCount);
         }
@@ -62,10 +62,19 @@ namespace FlappyBirdTests
         [Fact]
         public void GameResetsOnCollision()
         {
-            driver.ExecuteScript("bird.y = 0; bird.speed = 10;"); // Force collision with top
-            System.Threading.Thread.Sleep(500); // wait for game to detect collision
+            driver.ExecuteScript("bird.y = 0; bird.speed = 10;"); // tetejének megy
+            System.Threading.Thread.Sleep(500); // ütközés
             var birdYPosition = driver.ExecuteScript("return bird.y;");
-            Assert.NotEqual(150, birdYPosition); // Initial bird y position after reset
+            Assert.NotEqual(150, birdYPosition);
+        }
+
+        [Fact]
+        public void BirdFallsWithoutKeyPress()
+        {
+            var initialBirdYPosition = driver.ExecuteScript("return bird.y;");
+            System.Threading.Thread.Sleep(1000); // esik e a madár
+            var newBirdYPosition = driver.ExecuteScript("return bird.y;");
+            Assert.True((double)newBirdYPosition > (double)initialBirdYPosition);
         }
     }
 }
