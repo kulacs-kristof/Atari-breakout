@@ -89,6 +89,16 @@ public void TestBackgroundMovesDuringGame()
     Assert.AreNotEqual(initialBackgroundX, newBackgroundX);
 }
 
+        [Test]
+public void TestCounterCountsPoints()
+{
+    var initialScore = (long)_js.ExecuteScript("return score;");
+    Thread.Sleep(3000);  // Wait for some pipes to be passed
+    var newScore = (long)_js.ExecuteScript("return score;");
+    Assert.Greater(newScore, initialScore);
+}
+
+
 
         [TearDown]
         public void Teardown()
