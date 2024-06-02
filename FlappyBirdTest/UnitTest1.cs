@@ -34,6 +34,15 @@ namespace FlappyBirdTests
             Assert.AreEqual(0, initialScore);
         }
 
+        [Test]
+public void TestBirdMovementOnButtonPress()
+{
+    var initialY = (long)_js.ExecuteScript("return bird.y;");
+    _js.ExecuteScript("document.dispatchEvent(new KeyboardEvent('keydown', {'key': ' ' }));");
+    Thread.Sleep(100);
+    var newY = (long)_js.ExecuteScript("return bird.y;");
+    Assert.Less(newY, initialY);
+}
         
 
         [TearDown]
