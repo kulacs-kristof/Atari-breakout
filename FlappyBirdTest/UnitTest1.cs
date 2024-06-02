@@ -24,6 +24,18 @@ namespace FlappyBirdTests
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
         }
 
+        [Test]
+        public void TestGameInitialization()
+        {
+            var canvas = _driver.FindElement(By.Id("gameCanvas"));
+            Assert.IsNotNull(canvas);
+
+            var initialScore = (long)_js.ExecuteScript("return score;");
+            Assert.AreEqual(0, initialScore);
+        }
+
+        
+
         [TearDown]
         public void Teardown()
         {
