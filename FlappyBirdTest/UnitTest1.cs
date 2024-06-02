@@ -63,6 +63,17 @@ public void TestBirdDiesOnCollision()
     Assert.AreEqual(150, birdYAfterCollision);  // Bird reset position
 }
 
+        [Test]
+public void TestGameOverTextAppears()
+{
+    // Move bird to a collision position
+    _js.ExecuteScript("bird.y = 700; update();");
+    Thread.Sleep(100);
+    var gameOverText = _driver.FindElement(By.XPath("//*[contains(text(), 'Game Over')]"));
+    Assert.IsNotNull(gameOverText);
+}
+
+
 
         [TearDown]
         public void Teardown()
