@@ -80,6 +80,15 @@ public void TestBirdAppearsAtStart()
     Assert.AreEqual(150, initialY);
 }
 
+        [Test]
+public void TestBackgroundMovesDuringGame()
+{
+    var initialBackgroundX = (long)_js.ExecuteScript("return backgroundImg.offsetLeft;");
+    Thread.Sleep(1000);
+    var newBackgroundX = (long)_js.ExecuteScript("return backgroundImg.offsetLeft;");
+    Assert.AreNotEqual(initialBackgroundX, newBackgroundX);
+}
+
 
         [TearDown]
         public void Teardown()
