@@ -44,6 +44,15 @@ public void TestBirdMovementOnButtonPress()
     Assert.Less(newY, initialY);
 }
         
+        [Test]
+public void TestBirdFallsWithoutButtonPress()
+{
+    var initialY = (long)_js.ExecuteScript("return bird.y;");
+    Thread.Sleep(500);
+    var newY = (long)_js.ExecuteScript("return bird.y;");
+    Assert.Greater(newY, initialY);
+}
+
 
         [TearDown]
         public void Teardown()
