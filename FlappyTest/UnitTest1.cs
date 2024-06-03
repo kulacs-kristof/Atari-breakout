@@ -45,7 +45,7 @@ namespace FlappyBirdTests
         {
             var initialBirdYPosition = driver.ExecuteScript("return bird.y;");
             driver.FindElement(By.TagName("body")).SendKeys(Keys.Space);
-            System.Threading.Thread.Sleep(100); // várakozik hogy megnézze történik e valami
+            System.Threading.Thread.Sleep(100); // vÃ¡rakozik hogy megnÃ©zze tÃ¶rtÃ©nik e valami
             var newBirdYPosition = driver.ExecuteScript("return bird.y;");
             Assert.NotEqual(initialBirdYPosition, newBirdYPosition);
         }
@@ -54,7 +54,7 @@ namespace FlappyBirdTests
         public void PipesAppearAndMove()
         {
             var initialPipeCount = driver.ExecuteScript("return pipes.length;");
-            System.Threading.Thread.Sleep(2000); // csövek generálására vár
+            System.Threading.Thread.Sleep(2000); // csÃ¶vek generÃ¡lÃ¡sÃ¡ra vÃ¡r
             var newPipeCount = driver.ExecuteScript("return pipes.length;");
             Assert.Equal(initialPipeCount, newPipeCount);
         }
@@ -62,8 +62,8 @@ namespace FlappyBirdTests
         [Fact]
         public void GameResetsOnCollision()
         {
-            driver.ExecuteScript("bird.y = 0; bird.speed = 10;"); // tetejének megy
-            System.Threading.Thread.Sleep(500); // ütközés
+            driver.ExecuteScript("bird.y = 0; bird.speed = 10;");
+            System.Threading.Thread.Sleep(500); // Ã¼tkÃ¶zÃ©s
             var birdYPosition = driver.ExecuteScript("return bird.y;");
             Assert.NotEqual(150, birdYPosition);
         }
@@ -72,7 +72,7 @@ namespace FlappyBirdTests
         public void BirdFallsWithoutKeyPress()
         {
             var initialBirdYPosition = driver.ExecuteScript("return bird.y;");
-            System.Threading.Thread.Sleep(1000); // esik e a madár
+            System.Threading.Thread.Sleep(1000); // esik e a madÃ¡r
             var newBirdYPosition = driver.ExecuteScript("return bird.y;");
             Assert.True((double)newBirdYPosition > (double)initialBirdYPosition);
         }
